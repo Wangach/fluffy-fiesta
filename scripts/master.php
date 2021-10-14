@@ -195,7 +195,7 @@ function showRecLost(){
 						print_r($key . $value);
 					}*/
 					//html data
-					$showData .= "	<tr>
+					$showData = "	<tr>
 										<td>$hmPl</td>
 										<td>$awPl</td>
 										<td>$hmTm</td>
