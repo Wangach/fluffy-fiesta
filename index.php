@@ -17,12 +17,12 @@ include 'scripts/login.php';
 	
 </head>
 <body>
-	<!--/Custom Loaders/
+	<!--/Custom Loaders/-->
 	<div class="loader">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-    </div>-->
+          <div class="spinner-border text-success" role="status">
+            <span></span>
+          </div>
+          </div>
 
 	<header id="myHeader">
 		<div class="loginformspace">

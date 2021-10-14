@@ -6,12 +6,15 @@ function pataUno(){
 	include 'db.php';
 	$customer = $_SESSION['cust'];
 
-	$getUno = "SELECT * FROM f2users WHERE username = '$customer'";
-	$find = mysqli_query($connect, $getUno);
+	$getAlias = "SELECT * FROM f2users WHERE username = '$customer'";
+	$find = mysqli_query($connect, $getAlias);
+
 
 	if (mysqli_num_rows($find) > 0) {
 		while ($person = mysqli_fetch_assoc($find)) {
 			$userLim = $person['uno'];
+			// $getUno = "SELECT * FROM f2users WHERE username = '$customer'";
+			// $find = mysqli_query($connect, $getUno);
 
 			
 
@@ -138,23 +141,8 @@ function showRecWon(){
 						print_r($key . $value);
 					}*/
 					//html data
-					$showData = "<div class='table-responsive'>";
-					$showData .= "<table class='table table-dark' id='multichange'>
-									<caption> Recent Won Matches</caption>";
-					$showData .= "
-								<thead>
-								    <tr>
-								      <th scope='col'>H. Player</th>
-								      <th scope='col'>A. Player</th>
-								      <th scope='col'>H. Team</th>
-								      <th scope='col'>A. Team</th>
-								      <th scope='col' class='text text-success'>Winner</th>
-								      <th scope='col'>Date</th>
-								      <th class='text text-warning' scope='col'>Match Id</th>
-								      
-								    </tr>
-								  </thead>";
-					$showData .= "<tbody>
+					
+					$showData = "
 									<tr>
 										<td>$hmPl</td>
 										<td>$awPl</td>
@@ -163,10 +151,7 @@ function showRecWon(){
 										<td class='text text-success'>$win</td>
 										<td>$playDte</td>
 										<td class='text text-warning'>$mId</td>
-									</tr>
-								</tbody>";
-					$showData .= "</table>";
-					$showData .= "</div>";
+									</tr>";
 
 					echo $showData;
 				}
@@ -210,24 +195,7 @@ function showRecLost(){
 						print_r($key . $value);
 					}*/
 					//html data
-					$showData = "<div class='table-responsive'>";
-					$showData .= "<table class='table table-dark' id='multichange'>
-									<caption>Recent Lost Matches</caption>";
-					$showData .= "
-								<thead>
-								    <tr>
-								      <th scope='col'>H. Player</th>
-								      <th scope='col'>A. Player</th>
-								      <th scope='col'>H. Team</th>
-								      <th scope='col'>A. Team</th>
-								      <th scope='col' class='text text-danger'>Looser</th>
-								      <th scope='col'>Date</th>
-								      <th class='text text-warning' scope='col'>Match Id</th>
-								      
-								    </tr>
-								  </thead>";
-					$showData .= "<tbody>
-									<tr>
+					$showData .= "	<tr>
 										<td>$hmPl</td>
 										<td>$awPl</td>
 										<td>$hmTm</td>
@@ -235,10 +203,7 @@ function showRecLost(){
 										<td class='text text-danger'>$loss</td>
 										<td>$playDte</td>
 										<td class='text text-warning'>$mId</td>
-									</tr>
-								</tbody>";
-					$showData .= "</table>";
-					$showData .= "</div>";
+									</tr>";
 
 					echo $showData;
 				}

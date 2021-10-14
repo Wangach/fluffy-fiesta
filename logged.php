@@ -17,6 +17,12 @@ include 'scripts/master.php';
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
+        <!--/Custom Loaders/-->
+        <div class="loader">
+          <div class="spinner-border icon-success" role="status">
+            <span class="sr-only"></span>
+          </div>
+          </div>
  
         <!--navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark cus-theme">
@@ -60,12 +66,12 @@ include 'scripts/master.php';
                         <div class="f2-card card-success">
                           <div class="f2-card-image image-1">
                             <span class="icon-info">
-                              <i class="fas fa-fighter-jet"></i>
+                              <i class="fas fa-hands-wash"></i>
                             </span>
                           </div>
                           <div class="f2-card-text">
                             <span class="date fas fa-sync"></span>
-                            <h2>2</h2>
+                            <h2 class="text text-success"><?php getWonGames(); ?></h2>
                             <p>Won Games</p>
                           </div><!--f2-card-text-->
                          
@@ -75,13 +81,13 @@ include 'scripts/master.php';
                       <div class="col-sm-4 p-2">
                         <div class="f2-card card-warning">
                           <div class="f2-card-image image-2">
-                            <span class="icon-pinkie">
-                              <i class="fas fa-futbol"></i>
+                            <span class="icon-info">
+                              <i class="fas fa-thumbs-down"></i>
                             </span>
                           </div>
                           <div class="f2-card-text">
                             <span class="date fas fa-sync"></span>
-                            <h2>2</h2>
+                            <h2 class="text text-danger"><?php getLostGames(); ?></h2>
                             <p>Lost Games</p>
                           </div><!--f2-card-text-->
                         </div><!--f2-card-->
@@ -90,13 +96,13 @@ include 'scripts/master.php';
                       <div class="col-sm-4 p-1">
                         <div class="f2-card card-danger">
                           <div class="f2-card-image image-3">
-                            <span class="icon-success">
+                            <span class="icon-info">
                               <i class="fas fa-plus"></i>
                             </span>
                           </div>
                           <div class="f2-card-text">
                             <span class="date fas fa-sync"></span>
-                            <h2>4</h2>
+                            <h2 class="text text-primary"><?php getPlayedMatches(); ?></h2>
                             <p>Total Games</p>
                           </div><!--f2-card-text-->
                         </div><!--f2-card-->
@@ -114,41 +120,29 @@ include 'scripts/master.php';
                         <div class="col-md-10 col-lg-12 col-sm-10">
                         <nav>
                             <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                              <a class="nav-item nav-link active" id="nav-wg-tab" data-toggle="tab" href="#nav-fair" role="tab" aria-controls="nav-fair" aria-selected="true">Won Games</a>
-                              <a class="nav-item nav-link" id="nav-lg-tab" data-toggle="tab" href="#nav-looser" role="tab" aria-controls="nav-looser" aria-selected="false">Lost Games</a>
+                              <a class="nav-item nav-link active" id="nav-wg-tab" data-toggle="tab" href="#nav-won" role="tab" aria-controls="nav-fair" aria-selected="true">Won Games</a>
+                              <a class="nav-item nav-link" id="nav-lg-tab" data-toggle="tab" href="#nav-lost" role="tab" aria-controls="nav-looser" aria-selected="false">Lost Games</a>
                             </div>
                           </nav>
                           <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-won" role="tabpanel" aria-labelledby="nav-home-tab">
                               <div class="table-responsive">
                                 <table class="table fcus-table">
+                                <caption> Recent Won Matches</caption>
                                   <thead>
-                                  <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">First</th>
-                                    <th scope="col">Last</th>
-                                    <th scope="col">Handle</th>
+                                    <tr>
+                                      <th scope='col'>H. Player</th>
+                                      <th scope='col'>A. Player</th>
+                                      <th scope='col'>H. Team</th>
+                                      <th scope='col'>A. Team</th>
+                                      <th scope='col' class='text text-success'>Winner</th>
+                                      <th scope='col'>Date</th>
+                                      <th class='text text-warning' scope='col'>Match Id</th>
+                                      
                                     </tr>
                                   </thead>
                                   <tbody>
-                                    <tr>
-                                      <th scope="row">1</th>
-                                      <td>Mark</td>
-                                      <td>Otto</td>
-                                      <td>@mdo</td>
-                                      </tr>
-                                      <tr>
-                                      <th scope="row">2</th>
-                                      <td>Jacob</td>
-                                      <td>Thornton</td>
-                                      <td>@fat</td>
-                                      </tr>
-                                      <tr>
-                                      <th scope="row">3</th>
-                                      <td>Larry</td>
-                                      <td>the Bird</td>
-                                      <td>@twitter</td>
-                                      </tr>
+                                    <?php showRecWon(); ?>
                                   </tbody>
                                   </table>
                               </div><!--table-responsive-->
@@ -156,33 +150,21 @@ include 'scripts/master.php';
                             <div class="tab-pane fade" id="nav-lost" role="tabpanel" aria-labelledby="nav-profile-tab">
                               <div class="table-responsive">
                                 <table class="table fcus-table">
+                                <caption> Recent Lost Matches</caption>
                                   <thead>
                                     <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">First</th>
-                                    <th scope="col">Last</th>
-                                    <th scope="col">Handle</th>
+                                      <th scope='col'>H. Player</th>
+                                      <th scope='col'>A. Player</th>
+                                      <th scope='col'>H. Team</th>
+                                      <th scope='col'>A. Team</th>
+                                      <th scope='col' class='text text-danger'>Looser</th>
+                                      <th scope='col'>Date</th>
+                                      <th class='text text-warning' scope='col'>Match Id</th>
+                                      
                                     </tr>
                                   </thead>
                                   <tbody>
-                                    <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                    <th scope="row">3</th>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                    </tr>
+                                    <?php showRecLost(); ?>
                                   </tbody>
                                   </table>
                               </div><!--table-responsive-->
@@ -201,7 +183,7 @@ include 'scripts/master.php';
                     <div class="row">
                         <div class="col-md-10 col-lg-12 col-sm-10">
                             <div class="table-responsive">
-                              <table class="table table-dark table-striped" id="multichange">
+                              <table class="table table-dark f2-table" id="multichange">
                                 <caption> <?php echo $disp_name; ?>'s Recent Transactions</caption>
                                   <thead class="thead-light">
                                     <tr>

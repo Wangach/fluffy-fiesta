@@ -25,42 +25,14 @@
   }
   nav {
       @include cus-theme;
-    //   a:hover {
-    //     transform: scale(.9);
-    //     transition: .5s;
-    //     color: $color-ladha;
-    // }
   }
   /*Login Page*/
   #cusHeader {
      margin-top: 1rem;
     border-radius: .5rem;
     position: relative;
-    height: 95vh;
     background: $color-main;
     color: $text-color;
-    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
-    // .heading {
-    //     padding: 3rem;
-    //     position: absolute;
-    //     color: rgb(226, 230, 233);
-    //     top: 35%;
-    //     left: 50%;
-    //     transform: translate(-50%, -50%);
-    //     font-family: 'Pacifico', sans-serif;
-      
-    //   }
-    // #customer-prev {
-    //     position: absolute;
-    //     top: 50%;
-    //     left: 50%;
-    //     transform: translate(-50%, -20%);
-    //     text-align: center;
-    //     padding: 2rem;
-    //     color: rgb(109, 216, 216);
-    //     font-weight: bold;
-    //   }
-      
   }
   .loginformspace {
     text-align: center;
@@ -106,4 +78,19 @@
 }
 .customer-footer {
   @include footr;
+}
+@media (max-width: 768px) {
+  .section-heading {
+    text-transform: uppercase;
+    padding: .5rem;
+    font-family: "Originals";
+    width: 80%;
+    font-size: .8rem;
+}
+.fcus-table {
+  @include resizeTable;
+}
+.f2-table {
+  @include resizeTable;
+}
 }

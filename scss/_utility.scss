@@ -1,6 +1,31 @@
+/*Custom Loaders*/
+.loader {
+  position: fixed;
+  background-color: $color-prim;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+}
+.spinner-border {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  margin: auto;
+  width: 4rem !important;
+  height: 4rem !important;
+  
+}
 .fcus-table {
     background: $ruby;
-    color: $pantone;
+    color: $fawn;
+}
+.f2-table {
+  background: $ruby;
+    color: $mistyrose;
 }
 .active {
     background: $fogra !important;
