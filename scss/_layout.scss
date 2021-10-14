@@ -1,0 +1,109 @@
+@font-face {
+    font-family: Grandstander;
+    src: url(../gfonts/Grandstander-VariableFont_wght.ttf);
+  }
+  @font-face {
+    font-family: Originals;
+    src: url(../gfonts/OriginalSurfer-Regular.ttf);
+  }
+  @font-face {
+    font-family: Jomhuria;
+    src: url(../gfonts/Jomhuria-Regular.ttf);
+  }
+  @font-face {
+    font-family: Pacifico;
+    src: url(../gfonts/Pacifico-Regular.ttf);
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    padding: 3rem;
+    background: $color-prim;
+  }
+  nav {
+      @include cus-theme;
+    //   a:hover {
+    //     transform: scale(.9);
+    //     transition: .5s;
+    //     color: $color-ladha;
+    // }
+  }
+  /*Login Page*/
+  #cusHeader {
+     margin-top: 1rem;
+    border-radius: .5rem;
+    position: relative;
+    height: 95vh;
+    background: $color-main;
+    color: $text-color;
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    // .heading {
+    //     padding: 3rem;
+    //     position: absolute;
+    //     color: rgb(226, 230, 233);
+    //     top: 35%;
+    //     left: 50%;
+    //     transform: translate(-50%, -50%);
+    //     font-family: 'Pacifico', sans-serif;
+      
+    //   }
+    // #customer-prev {
+    //     position: absolute;
+    //     top: 50%;
+    //     left: 50%;
+    //     transform: translate(-50%, -20%);
+    //     text-align: center;
+    //     padding: 2rem;
+    //     color: rgb(109, 216, 216);
+    //     font-weight: bold;
+    //   }
+      
+  }
+  .loginformspace {
+    text-align: center;
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #DCE3F4;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  #shape {
+    @include deco;
+  }
+  .section-heading {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 2rem;
+    font-family: "Roboto";
+    width: 60%;
+    margin: .5rem auto;
+    border: 0.5px solid $pantone;
+    outline: 1px solid $color-ladha;
+    outline-offset: 0.2em;
+    margin-bottom: 1rem;
+}
+.fifa-holder {
+    margin-top: 1rem;
+    border: 1px dotted $color-ladha;
+    border-radius: .5rem;
+    background: $fogra;
+    padding: 2rem;
+    color: $honeydew;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+  h2 {
+    text-align: center;
+    span{
+      display: block;
+    }
+  }
+}
+.customer-footer {
+  @include footr;
+}

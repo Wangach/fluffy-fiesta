@@ -1,0 +1,23 @@
+@mixin cus-theme {
+    background-color: $color-prim;
+    color: $text-color;
+    border: 1px solid $text-color;
+    border-radius: .5rem;
+}
+@mixin deco {
+    margin-top: 1rem;
+    border-radius: .5rem;
+    background: $color-main;
+    padding: 2rem;
+    color: $honeydew;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+}
+@mixin footr {
+    background: $color-main;
+    color: $honeydew;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+}
