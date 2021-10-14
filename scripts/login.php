@@ -20,6 +20,8 @@ if(isset($_POST['log'])){
 
     	if (mysqli_num_rows($check) > 0) {
     		$_SESSION['cust'] = $uname;
+			$upsess = "UPDATE f2users SET login = '1' WHERE username = '$uname'";
+			$hak = mysqli_query($connect, $upsess);
     		//redirect user
     		header("Location: logged.php");
     	}else{
@@ -34,6 +36,9 @@ if(isset($_POST['log'])){
 
 //logout
 if (isset($_GET['logout'])) {
+	$_SESSION['cust'] = $uname;
+	$out = "UPDATE f2users SET login = '0' WHERE username = '$uname'";
+	$hak = mysqli_query($connect, $out);
 	unset($_SESSION['cust']);
 
 	//redirect
