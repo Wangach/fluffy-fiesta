@@ -33,15 +33,4 @@ if(isset($_POST['log'])){
     	}
     }
 }
-
-//logout
-if (isset($_GET['logout'])) {
-	$_SESSION['cust'] = $uname;
-	$out = "UPDATE f2users SET login = '0' WHERE username = '$uname'";
-	$hak = mysqli_query($connect, $out);
-	unset($_SESSION['cust']);
-
-	//redirect
-	header("Location: ../index.php");
-}
 ?>

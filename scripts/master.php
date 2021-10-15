@@ -307,4 +307,14 @@ function calculateCash(){
 	
 }
 
+//logout
+if (isset($_GET['logout']) && isset($_GET['user'])) {
+	$myUser = $_GET['user'];
+	$out = "UPDATE f2users SET login = '0' WHERE username = '$myUser'";
+	$hak = mysqli_query($connect, $out);
+	unset($_SESSION['cust']);
+
+	//redirect
+	header("Location: ../index.php");
+}
 ?>

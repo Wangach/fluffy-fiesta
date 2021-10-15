@@ -51,7 +51,7 @@ include 'scripts/master.php';
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                       <a class="dropdown-item" href="#">Limit <span class="badge badge-danger"><?php pataUno(); ?></span></a>
                       <a class="dropdown-item" href="#">My Cash <span class="badge badge-dark"><?php calculateCash(); ?></span></a>
-                      <a class="dropdown-item" href="scripts/login.php?logout=1">Logout <i class="fas fa-sign-out-alt"></i></a>
+                      <a class="dropdown-item" href="scripts/master.php?logout=1&user=<?php echo $disp_name?>">Logout <i class="fas fa-sign-out-alt"></i></a>
                     </div>
                   </li>
               </ul>
